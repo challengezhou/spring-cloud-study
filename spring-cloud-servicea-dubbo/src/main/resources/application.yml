@@ -1,0 +1,10 @@
+
+server.port: 8081
+
+spring:
+  main:
+    allow-circular-references: true
+  profiles:
+    active: local
+  application:
+    name: spring-cloud-servicea-dubbo

@@ -1,0 +1,15 @@
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: for-test
+          uri: lb://spring-cloud-study
+          predicates:
+            - Path=/abc/**
+          filters:
+            - StripPrefix=1
+            - Test

@@ -1,0 +1,19 @@
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+dubbo:
+  cloud:
+    subscribed-services: spring-cloud-servicea-dubbo
+  registry:
+    address: spring-cloud://localhost       # 挂载到 Spring Cloud 注册中心
+  consumer:
+    check: false   #dubbo默认有启动检查
+    retries: 0     #dubbo内置的重试机制
+  protocols:
+    dubbo:
+      name: dubbo   # Dubbo 的协议名称
+      port: 20881      # port 为协议端口（ -1 表示自增端口，从 20880 开始）
